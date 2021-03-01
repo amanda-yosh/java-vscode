@@ -29,6 +29,7 @@ public class exercicio8 {
         
         // soma das diagonais
         int somaDP = 0;
+        int somaDS = 0;
             
         // diagonal principal
         for ( int i = 0; i <= vetorA.length; i++) {
