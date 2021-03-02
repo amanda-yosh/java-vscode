@@ -34,6 +34,10 @@ public class Porta {
         this.cor = tinta;
     }
 
+    public boolean getEstado() {
+        return this.estado;
+    }
+
     public void estaAberta() {
         if (estado == true) {
             System.out.println("A porta está aberta");

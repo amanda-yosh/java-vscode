@@ -5,13 +5,16 @@ public class Conta {
     String agencia;
     Data dataAbertura; // String dataAbertura;
     int numero;
-    double saldo;
+    private double saldo;
 
-    // Cliente titular = new Cliente(); //quando chamarem uma nova conta, haverá um
-    // novo cliente para ela
+    // Cliente titular = new Cliente(); //quando chamarem uma nova conta, haverá um novo cliente para ela
 
     void sacar(double qtd) {
-        this.saldo -= qtd;
+        if (qtd < this.saldo) {
+            this.saldo -= qtd;
+        } else {
+            System.err.println("Saldo insuficiente");
+        }
     }
 
     void depositar(double qtd) {

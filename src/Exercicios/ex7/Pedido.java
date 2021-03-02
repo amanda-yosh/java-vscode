@@ -6,6 +6,11 @@ public class Pedido {
     private String clienteNome;
     private int itens; //lista de produtos
     private String pagamento;
+
+    void setPedido(String clienteNome) {
+        this.pedido = pedido++;
+        this.clienteNome = clienteNome;
+    }
     
     // private final Pagamento pagamento;
     // public enum Pagamento {
@@ -24,5 +29,9 @@ public class Pedido {
                 this.pagamento = tipo;
                 break;
         }
+    }
+
+    void imprimirResumoPedido() {
+        System.out.println(this.pedido + this.clienteNome +);
     }
 }

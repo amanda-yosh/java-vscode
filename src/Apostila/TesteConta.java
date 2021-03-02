@@ -1,6 +1,6 @@
 package Apostila;
 
-public class Programa {
+public class TesteConta {
     public static void main(String[] args) {
 
         Conta c1 = new Conta();

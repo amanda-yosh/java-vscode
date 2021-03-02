@@ -1,39 +1,40 @@
 package Exercicios.ex6;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Carta {
 
-    public enum Valor {
-        AS, VALETE, DAMA, REI, DOIS, TRES, QUATRO, CINCO, SEIS, SETE, OITO, NOVE
-    }
+    private Naipe naipe;
+    private Valor valor;
 
-    public enum Naipe {
-        PAUS, OUROS, COPAS, ESPADAS
-    }
-
-    private final Valor valor;
-    private final Naipe naipe;
-
-    private Carta(Valor valor, Naipe naipe) {
-        this.valor = valor;
+    private Carta(Naipe naipe, Valor valor) {
         this.naipe = naipe;
+        this.valor = valor;
     }
-    
-    // private String naipe;
-    // private String valor;
 
-    // public void setNaipe(String naipe) {
-    //     this.naipe = naipe;
-    // }
+    public Naipe naipe() {
+        return naipe;
+    }
 
-    // public String getNaipe() {
-    //     return this.naipe;
-    // }
+    public Valor valor() {
+        return valor;
+    }
 
-    // public void setValor(String valor) {
-    //     this.valor = valor;
-    // }
+    public String toString() {
+        return valor + " de " + naipe;
+    }
 
-    // public String getValor() {
-    //     return this.valor;
-    // }
+    private static final List<Carta> baralho = new ArrayList<Carta>();
+
+    //baralho
+    static {
+        for (Naipe naipe : Naipe.values())
+            for (Valor valor : Valor.values())
+                baralho.add(new Carta(naipe, valor));
+    }
+
+    public static ArrayList<Carta> novoBaralho() {
+        return new ArrayList<Carta>(baralho); // Retorna copia do baralho
+    }
 }
