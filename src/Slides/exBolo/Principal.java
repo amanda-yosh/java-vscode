@@ -2,31 +2,34 @@ package Slides.exBolo;
 
 public class Principal {
     public static void main(String[] args) {
-        BoloRetangular boloDeCoco = new BoloRetangular(3, "coco", "morango");
 
+        // BoloRetangular.numBolos = 10;
+        // System.out.println("Quantos bolos? " + BoloRetangular.numBolos);
+
+        BoloRetangular boloDeCoco = new BoloRetangular(3, "coco", "morango");
+        boloDeCoco.decorar();
         boloDeCoco.comer(1);
         imprimir(boloDeCoco);
-        boloDeCoco.decorar();
         
-        System.out.println("--------------------");
-        BoloRetangular boloMorango = new BoloRetangular(3, "morango", "morango");
-        imprimir(boloMorango);
-
-        System.out.println("--------------------");
-        boloMorango = boloDeCoco;
-        imprimir(boloDeCoco);
-        imprimir(boloMorango);
+        
+        // System.out.println("--------------------");
+        // BoloRetangular boloMorango = new BoloRetangular(3, "morango", "morango", 25);
+        // imprimir(boloMorango);
 
         // System.out.println("--------------------");
-        // boloMorango = null;
+        // boloMorango = boloDeCoco;
+        // imprimir(boloDeCoco);
         // imprimir(boloMorango);
-        // // Uma variavel é nula quando ainda nao foi instanciada, ou seja, ainda nao “virou” um objeto. Ex: Objeto x; // x=Null x = new Objeto(); // x deixa de ser null e vira um objeto do tipo Objeto
 
-        System.out.println("--------------------");
-        boloDeCoco.setPeso(-2);
+        // // System.out.println("--------------------");
+        // // boloMorango = null;
+        // // imprimir(boloMorango);
+        // // // Uma variavel é nula quando ainda nao foi instanciada, ou seja, ainda nao “virou” um objeto. Ex: Objeto x; // x=Null x = new Objeto(); // x deixa de ser null e vira um objeto do tipo Objeto
+
+        // System.out.println("--------------------");
     }
 
-    static void imprimir(BoloRetangular bolo) {
-        System.out.println("Peso: " + bolo.getPeso() + "\nSabor: " + bolo.getSabor() + "\nCobertura: " + bolo.getCobertura());
+    public static void imprimir(BoloRetangular bolo) {
+        System.out.println("Peso: " + bolo.getPeso() + "\nSabor: " + bolo.getSabor() + "\nCobertura: " + bolo.getCobertura() + "\nQuantidade de bolos Total: " + BoloRetangular.getNumBolos());
     }
 }

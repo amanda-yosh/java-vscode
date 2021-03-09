@@ -4,39 +4,37 @@ public class BoloRetangular {
     private float peso;
     private String sabor;
     private String cobertura;
+    private static int numBolos; //para contar o número de instancias criadas
+    private static final int TEMPO_FORNO = 40; // static final significa que estou declarando uma constante
 
-    //construtor
-    BoloRetangular(float peso, String sabor, String cobertura) {
+    // construtor
+    public BoloRetangular(float peso, String sabor, String cobertura) {
         this.peso = peso;
-        this.setSabor(sabor);
-        this.setCobertura(cobertura);
+        this.sabor = sabor;
+        this.cobertura = cobertura;
+        numBolos++;
+        //BoloRetangular.tempo = tempoAssar;
+    }
+
+    public BoloRetangular() {
+        numBolos++;
     }
 
     public float getPeso() {
         return peso;
     }
 
-    public void setPeso(float peso) {
-        if (peso >= 0) {
-            this.peso = peso;
-        }
-    }
-
     public String getSabor() {
-        return sabor;
+        return this.sabor;
     }
-
-    // public void setSabor(String sabor) {
-    //     this.sabor = sabor;
-    // }
 
     public String getCobertura() {
-        return cobertura;
+        return this.cobertura;
     }
 
-    // public void setCobertura(String cobertura) {
-    //     this.cobertura = cobertura;
-    // }
+    public static int getNumBolos() {
+        return numBolos;
+    }
 
     void decorar() {
         System.out.println("Bolo decorado!");
@@ -47,4 +45,18 @@ public class BoloRetangular {
         return peso;
     }
 
+    // uso do método static (que pertence a classe como um todo)
+    public void assar(int tempoAssar) {
+        if (Math.abs(tempoAssar * Math.PI) < TEMPO_FORNO) {
+            System.out.println("Bolo ainda está cru!");
+        }
+        if (tempoAssar == TEMPO_FORNO) {
+            System.out.println("Bolo está no ponto!");
+        }
+        if (tempoAssar == (TEMPO_FORNO + 10)) {
+            System.out.println("Bolo está queimando");
+        } else {
+            System.out.println("Bolo queimado!");
+        }
+    }
 }

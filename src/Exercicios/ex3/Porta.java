@@ -8,6 +8,13 @@ public class Porta {
     private double espessura;
     private boolean estado;
 
+    public Porta(String cor2, double altura2, double comprimento2, double espessura2) {
+        this.cor = cor2;
+        this.altura = altura2;
+        this.comprimento = comprimento2;
+        this.espessura = espessura2;
+    }
+
     public void getDimensao() {
         System.out.println(this.altura + " x " + this.comprimento + " x " + this.espessura);
     }
