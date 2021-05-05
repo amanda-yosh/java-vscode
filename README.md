@@ -1,4 +1,4 @@
-## Exercícios - Java
+# Exercícios - Java
 
 Lista de exercícios usando a linguagem Java da matéria de Programação Orientada a Objetos (POO).
 
@@ -13,4 +13,4 @@ Utilizando o VSCode para editar, compilar e interpretar.
   - `Exercicios`: contém os exercícios da lista de introdução a POO
 - `lib`: pasta que contém as dependencias (vazia no momento)
 
-### Java é case sensitive
+*Java é case sensitive*
